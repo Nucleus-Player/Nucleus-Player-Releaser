@@ -1,0 +1,28 @@
+{
+  "name": "nucleus-player-releaser",
+  "version": "1.0.0",
+  "description": "Automatically publish build artifacts as releases to GitHub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nucleus-Player/Nucleus-Player-Releaser.git"
+  },
+  "author": "Samuel Attard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nucleus-Player/Nucleus-Player-Releaser/issues"
+  },
+  "homepage": "https://github.com/Nucleus-Player/Nucleus-Player-Releaser#readme",
+  "dependencies": {
+    "github": "^0.2.4",
+    "lodash": "^4.0.0",
+    "yargs": "^3.31.0"
+  },
+  "devDependencies": {
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^3.1.0"
+  }
+}
