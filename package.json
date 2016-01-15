@@ -1,6 +1,6 @@
 {
   "name": "nucleus-player-releaser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Automatically publish build artifacts as releases to GitHub",
   "main": "index.js",
   "scripts": {
