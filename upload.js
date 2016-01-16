@@ -1,6 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
+const fs = require('fs');
 const path = require('path');
 
 const OSX_EXT = '.dmg';
@@ -19,6 +20,9 @@ const last = (string, num) => {
 };
 
 const upload = (github, id, assetPath, name, suppressError) => {
+  if (!fs.existsSync(path.resolve(NUCLEUS_PATH_GLOBAL + assetPath))) {
+    return;
+  }
   console.log('Starting upload - ' + name); // eslint-disable-line
   github.releases.uploadAsset({
     owner: 'Nucleus-Player',
