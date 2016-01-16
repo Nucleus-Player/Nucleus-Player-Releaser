@@ -14,6 +14,7 @@ const WIN_NU_DELTA_EXT = '-delta.nupkg';
 const WIN64_NU_DELTA_EXT = 'x64-delta.nupkg';
 
 let NUCLEUS_PATH_GLOBAL;
+let COUNT = 0;
 
 const last = (string, num) => {
   return string.substr(string.length - num);
@@ -23,6 +24,7 @@ const upload = (github, id, assetPath, name, suppressError) => {
   if (!fs.existsSync(path.resolve(NUCLEUS_PATH_GLOBAL + assetPath))) {
     return;
   }
+  COUNT++;
   console.log('Starting upload - ' + name); // eslint-disable-line
   github.releases.uploadAsset({
     owner: 'Nucleus-Player',
@@ -38,6 +40,10 @@ const upload = (github, id, assetPath, name, suppressError) => {
       console.log('!!! Upload Suppressed - ' + name); // eslint-disable-line
     } else {
       console.log('Upload Successfull - ' + name); // eslint-disable-line
+    }
+    COUNT--;
+    if (COUNT === 0) {
+      require('request').get('http://ut.samuel.ninja:6069/api/force');
     }
   });
 };
