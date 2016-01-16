@@ -74,11 +74,11 @@ module.exports = (NUCLEUS_PATH, RELEASE_TYPE, github, targetRelease) => {
 
   if (needWin) {
     upload(github, targetRelease.id,
-      '/dist/build/installer32/Nucleus PlayerSetup.exe', 'Nucleus Player Setup.exe');
+      '/dist/build/installer32/Nucleus PlayerSetup.exe', 'Nucleus Player Setup.win.exe');
   }
   if (needWin64) {
     upload(github, targetRelease.id,
-      '/dist/build/installer64/Nucleus PlayerSetup.exe', 'Nucleus Player Setup-x64.exe');
+      '/dist/build/installer64/Nucleus PlayerSetup.exe', 'Nucleus Player Setup.win-x64.exe');
   }
   if (needWinNu) {
     upload(github, targetRelease.id,
@@ -99,6 +99,16 @@ module.exports = (NUCLEUS_PATH, RELEASE_TYPE, github, targetRelease) => {
     upload(github, targetRelease.id,
       '/dist/build/installer64/NucleusPlayer-' + packageJSON.version + '-delta.nupkg',
       'NucleusPlayer-' + packageJSON.version + '-x64-delta.nupkg', true);
+  }
+  if (needWinNuDelta) {
+    upload(github, targetRelease.id,
+      '/dist/build/installer32/RELEASES',
+      'RELEASES', true);
+  }
+  if (needWin64NuDelta) {
+    upload(github, targetRelease.id,
+      '/dist/build/installer64/RELEASES',
+      'RELEASES-x64', true);
   }
   // if (needWinNu) {
   //   pathToAsset = NUCLEUS_PATH + '/dist/built/win/Nuceleus Player Setup.exe';
