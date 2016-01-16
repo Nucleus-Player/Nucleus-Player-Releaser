@@ -70,7 +70,7 @@ module.exports = (NUCLEUS_PATH, RELEASE_TYPE, github, targetRelease) => {
     }
   });
 
-  const packageJSON = require(NUCLEUS_PATH + '/package.json');
+  const packageJSON = require(path.resolve(NUCLEUS_PATH + '/package.json'));
 
   if (needWin) {
     upload(github, targetRelease.id,

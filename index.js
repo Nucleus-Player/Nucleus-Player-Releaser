@@ -4,6 +4,7 @@
 
 const _ = require('lodash');
 const GitHubApi = require('github');
+const path = require('path');
 const yargs = require('yargs').argv;
 
 const uploadAsset = require('./upload');
@@ -28,7 +29,7 @@ github.authenticate({
   token: GITHUB_KEY,
 });
 
-const packageJSON = require(NUCLEUS_PATH + '/package.json');
+const packageJSON = require(path.resolve(NUCLEUS_PATH + '/package.json'));
 
 const initUploadProccess = () => {
   github.releases.listReleases({
