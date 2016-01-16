@@ -3,6 +3,9 @@
   "version": "1.0.1",
   "description": "Automatically publish build artifacts as releases to GitHub",
   "main": "index.js",
+  "bin": {
+    "release-nucleus": "index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const _ = require('lodash');
@@ -11,7 +13,7 @@ const RELEASE_TYPE = yargs['release-type'];
 const GITHUB_KEY = yargs['github-key'] || process.env.GITHUB_KEY;
 
 if (!NUCLEUS_PATH || !RELEASE_TYPE || !GITHUB_KEY) {
-  console.log('You must specify all command line options');
+  console.log('You must specify all command line options'); // eslint-disable-line
   process.exit(1);
 }
 
