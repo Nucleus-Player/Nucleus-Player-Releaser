@@ -82,6 +82,10 @@ module.exports = (NUCLEUS_PATH, RELEASE_TYPE, github, targetRelease) => {
 
   const packageJSON = require(path.resolve(NUCLEUS_PATH + '/package.json'));
 
+  if (needOSX) {
+    upload(github, targetRelease.id,
+      '/dist/Nucleus Player-darwin-x64/Nucleus Player.app', 'Nucleus Player.app');
+  }
   if (needWin) {
     upload(github, targetRelease.id,
       '/dist/build/installer32/Nucleus PlayerSetup.exe', 'Nucleus Player Setup.win.exe');
