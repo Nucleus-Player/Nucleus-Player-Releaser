@@ -84,7 +84,7 @@ module.exports = (NUCLEUS_PATH, RELEASE_TYPE, github, targetRelease) => {
 
   if (needOSX) {
     upload(github, targetRelease.id,
-      '/dist/Nucleus Player-darwin-x64/Nucleus Player.app', 'Nucleus Player.app');
+      '/dist/Nucleus Player-darwin-x64/Nucleus Player.zip', 'Nucleus Player.zip');
   }
   if (needWin) {
     upload(github, targetRelease.id,
